@@ -1,0 +1,218 @@
+{
+    "info": {
+      "name": "Library API",
+      "description": "Colección para probar los endpoints de la API de biblioteca",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Auth - Register",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/auth/register",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "auth", "register"]
+          }
+        }
+      },
+      {
+        "name": "Auth - Login",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/auth/login",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "auth", "login"]
+          }
+        }
+      },
+      {
+        "name": "Get All Authors",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/authors",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "authors"]
+          }
+        }
+      },
+      {
+        "name": "Get Author by ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/authors/1",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "authors", "1"]
+          }
+        }
+      },
+      {
+        "name": "Create Author",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Jane Austen\",\n  \"birthdate\": \"1775-12-16\",\n  \"nationality\": \"British\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/authors",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "authors"]
+          }
+        }
+      },
+      {
+        "name": "Update Author",
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Jane Austen Updated\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/authors/1",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "authors", "1"]
+          }
+        }
+      },
+      {
+        "name": "Delete Author",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/authors/1",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "authors", "1"]
+          }
+        }
+      },
+      {
+        "name": "Get All Books",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/books",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "books"]
+          }
+        }
+      },
+      {
+        "name": "Create Book",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"title\": \"Pride and Prejudice\",\n  \"isbn\": \"111-222-333\",\n  \"published_date\": \"1813-01-28\",\n  \"author_id\": 1\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/books",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "books"]
+          }
+        }
+      },
+      {
+        "name": "Update Book",
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"title\": \"Pride and Prejudice Updated\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/books/1",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "books", "1"]
+          }
+        }
+      },
+      {
+        "name": "Delete Book",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/books/1",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "books", "1"]
+          }
+        }
+      }
+    ]
+  }
+  
