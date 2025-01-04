@@ -19,7 +19,7 @@ class AuthorControllerTest extends TestCase
 
         Author::factory()->count(5)->create();
 
-        $response = $this->getJson('/api/authors');
+        $response = $this->getJson('/api/v1/authors');
 
         $response->assertStatus(200)
                  ->assertJsonCount(5, 'data');
@@ -33,7 +33,7 @@ class AuthorControllerTest extends TestCase
 
         $author = Author::factory()->create();
 
-        $response = $this->getJson("/api/authors/{$author->id}");
+        $response = $this->getJson("/api/v1/authors/{$author->id}");
 
         $response->assertStatus(200)
                  ->assertJsonFragment(['name' => $author->name]);
@@ -45,7 +45,7 @@ class AuthorControllerTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
 
-        $response = $this->getJson('/api/authors/999');
+        $response = $this->getJson('/api/v1/authors/999');
 
         $response->assertStatus(404)
                  ->assertJson(['error' => 'Author not found']);
@@ -63,7 +63,7 @@ class AuthorControllerTest extends TestCase
             'nationality' => 'American',
         ];
 
-        $response = $this->postJson('/api/authors', $data);
+        $response = $this->postJson('/api/v1/authors', $data);
 
         $response->assertStatus(201)
                  ->assertJsonFragment(['name' => 'New Author']);
@@ -75,7 +75,7 @@ class AuthorControllerTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
 
-        $response = $this->postJson('/api/authors', []);
+        $response = $this->postJson('/api/v1/authors', []);
 
         $response->assertStatus(422)
                  ->assertJsonValidationErrors(['name', 'birthdate', 'nationality']);

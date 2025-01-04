@@ -16,15 +16,17 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-// Rutas públicas
-Route::post('auth/register', [AuthController::class, 'register']);
-Route::post('auth/login', [AuthController::class, 'login']);
+Route::prefix(env('API_VERSION', 'v1'))->group(function () {
+    // Rutas públicas
+    Route::post('auth/register', [AuthController::class, 'register']);
+    Route::post('auth/login', [AuthController::class, 'login']);
 
-// Rutas protegidas
-Route::middleware('auth:sanctum')->group(function () {
-    // Rutas para autores
-    Route::apiResource('authors', AuthorController::class);
+    // Rutas protegidas
+    Route::middleware('auth:sanctum')->group(function () {
+        // Rutas para autores
+        Route::apiResource('authors', AuthorController::class);
 
-    // Rutas para libros
-    Route::apiResource('books', BookController::class);
+        // Rutas para libros
+        Route::apiResource('books', BookController::class);
+    });
 });

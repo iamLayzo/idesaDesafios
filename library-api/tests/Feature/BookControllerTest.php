@@ -20,7 +20,7 @@ class BookControllerTest extends TestCase
 
         Book::factory()->count(3)->create();
 
-        $response = $this->getJson('/api/books');
+        $response = $this->getJson('/api/v1/books');
 
         $response->assertStatus(200)
                  ->assertJsonCount(3, 'data');
@@ -34,7 +34,7 @@ class BookControllerTest extends TestCase
 
         $book = Book::factory()->create();
 
-        $response = $this->getJson("/api/books/{$book->id}");
+        $response = $this->getJson("/api/v1/books/{$book->id}");
 
         $response->assertStatus(200)
                  ->assertJsonFragment(['title' => $book->title]);
@@ -46,7 +46,7 @@ class BookControllerTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
 
-        $response = $this->getJson('/api/books/999');
+        $response = $this->getJson('/api/v1/books/999');
 
         $response->assertStatus(404)
                  ->assertJson(['error' => 'Book not found']);
@@ -66,7 +66,7 @@ class BookControllerTest extends TestCase
             'author_id' => $author->id,
         ];
 
-        $response = $this->postJson('/api/books', $data);
+        $response = $this->postJson('/api/v1/books', $data);
 
         $response->assertStatus(201)
                  ->assertJsonFragment(['title' => 'New Book']);
@@ -78,7 +78,7 @@ class BookControllerTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
 
-        $response = $this->postJson('/api/books', []);
+        $response = $this->postJson('/api/v1/books', []);
 
         $response->assertStatus(422)
                  ->assertJsonValidationErrors(['title', 'isbn', 'published_date', 'author_id']);
