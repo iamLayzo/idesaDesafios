@@ -1,218 +1,538 @@
 {
-    "info": {
-      "name": "Library API",
-      "description": "Colección para probar los endpoints de la API de biblioteca",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
-      {
-        "name": "Auth - Register",
-        "request": {
-          "method": "POST",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/auth/register",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "auth", "register"]
-          }
-        }
-      },
-      {
-        "name": "Auth - Login",
-        "request": {
-          "method": "POST",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/auth/login",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "auth", "login"]
-          }
-        }
-      },
-      {
-        "name": "Get All Authors",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/authors",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "authors"]
-          }
-        }
-      },
-      {
-        "name": "Get Author by ID",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/authors/1",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "authors", "1"]
-          }
-        }
-      },
-      {
-        "name": "Create Author",
-        "request": {
-          "method": "POST",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"name\": \"Jane Austen\",\n  \"birthdate\": \"1775-12-16\",\n  \"nationality\": \"British\"\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/authors",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "authors"]
-          }
-        }
-      },
-      {
-        "name": "Update Author",
-        "request": {
-          "method": "PUT",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"name\": \"Jane Austen Updated\"\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/authors/1",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "authors", "1"]
-          }
-        }
-      },
-      {
-        "name": "Delete Author",
-        "request": {
-          "method": "DELETE",
-          "header": [],
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/authors/1",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "authors", "1"]
-          }
-        }
-      },
-      {
-        "name": "Get All Books",
-        "request": {
-          "method": "GET",
-          "header": [],
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/books",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "books"]
-          }
-        }
-      },
-      {
-        "name": "Create Book",
-        "request": {
-          "method": "POST",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"title\": \"Pride and Prejudice\",\n  \"isbn\": \"111-222-333\",\n  \"published_date\": \"1813-01-28\",\n  \"author_id\": 1\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/books",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "books"]
-          }
-        }
-      },
-      {
-        "name": "Update Book",
-        "request": {
-          "method": "PUT",
-          "header": [],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n  \"title\": \"Pride and Prejudice Updated\"\n}",
-            "options": {
-              "raw": {
-                "language": "json"
-              }
-            }
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/books/1",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "books", "1"]
-          }
-        }
-      },
-      {
-        "name": "Delete Book",
-        "request": {
-          "method": "DELETE",
-          "header": [],
-          "url": {
-            "raw": "http://127.0.0.1:8000/api/books/1",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["api", "books", "1"]
-          }
-        }
-      }
-    ]
-  }
-  
+	"info": {
+		"_postman_id": "3892a545-8085-400c-aa02-b549096102c6",
+		"name": "Library API",
+		"description": "Colección para probar los endpoints de la API de biblioteca",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17786302"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth - Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/{{version}}/auth/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth - Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Asumiendo que el token está en el campo \"accessToken\" del body de la respuesta\r",
+									"const response = pm.response.json();\r",
+									"pm.environment.set(\"authToken\", response.accessToken); // Guarda el token en una variable de entorno\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/{{version}}/auth/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Get All Authors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/authors",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author With Filter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/authors?nationality=paraguayan&sort_by=name&order=asc&per_page=5&page=1p",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"authors"
+							],
+							"query": [
+								{
+									"key": "nationality",
+									"value": "paraguayan"
+								},
+								{
+									"key": "sort_by",
+									"value": "name"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								},
+								{
+									"key": "per_page",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1p"
+								}
+							]
+						},
+						"description": "### Get Authors\n\nThis endpoint retrieves a list of authors based on the specified filters and pagination parameters.\n\n#### Request Parameters\n\n- `nationality` (query parameter): Filters authors by nationality.\n    \n- `sort_by` (query parameter): Sorts the authors based on the specified attribute.\n    \n- `order` (query parameter): Specifies the order of sorting (asc or desc).\n    \n- `per_page` (query parameter): Specifies the number of authors per page.\n    \n- `page` (query parameter): Specifies the page number.\n    \n\n#### Response Body\n\nThe response contains a JSON object with the following properties:\n\n- `current_page`: The current page number.\n    \n- `data`: An array of author objects, each containing the author's id, name, birthdate, nationality, created_at, and updated_at.\n    \n- `first_page_url`: The URL of the first page.\n    \n- `from`: The starting index of the results.\n    \n- `next_page_url`: The URL of the next page.\n    \n- `path`: The base path for the request.\n    \n- `per_page`: The number of results per page.\n    \n- `prev_page_url`: The URL of the previous page, if available.\n    \n- `to`: The ending index of the results.\n    \n\nThe response has a status code of 200 and a content type of `application/json`."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/authors/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Augusto Roa Bastos\",\n    \"birthdate\": \"1917-06-13\",\n    \"nationality\": \"Paraguayan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/{{version}}/authors",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Jane Austen Updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/{{version}}/authors/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/authors/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get All Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/books",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book With Filter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/books?title=Prejudice&author_name=Austen&sort_by=published_date&order=desc&per_page=3&page=2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"books"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Prejudice"
+								},
+								{
+									"key": "author_name",
+									"value": "Austen"
+								},
+								{
+									"key": "sort_by",
+									"value": "published_date"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "per_page",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/books/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Pride and Prejudice\",\n  \"isbn\": \"111-222-333\",\n  \"published_date\": \"1813-01-28\",\n  \"author_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/{{version}}/books",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Pride and Prejudice Updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/{{version}}/books/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/{{version}}/books/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
