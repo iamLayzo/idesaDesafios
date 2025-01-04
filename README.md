@@ -107,5 +107,4 @@ mysql -u usuario -p library < dump.sql
 
 ---
 
-**Nota**: Falta agregar el ejemplo de books del endpoint lo que soporta.
 
