@@ -39,8 +39,8 @@ Este proyecto es una API RESTful desarrollada con Laravel para gestionar una bib
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/iamLayzo/idesaDesafios/library-api.git
-   cd library-api
+   git clone https://github.com/iamLayzo/idesaDesafios
+   cd idesaDesafios
    ```
 
 2. Instalar dependencias:
